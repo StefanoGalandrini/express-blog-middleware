@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 60vw;
+	height: 100vh;
+	margin-inline: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	text-transform: uppercase;
+	color: #300050;
+	margin-bottom: 2rem;
+}
