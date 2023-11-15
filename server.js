@@ -15,6 +15,7 @@ const homeController = require('./controllers/home');
 
 // import middleware
 const notFound404 = require('./middleware/notFound404');
+const errorHandler = require('./middleware/errorHandler');
 
 
 // use router
@@ -30,6 +31,9 @@ app.get('/', homeController.index);
 
 // middleware for 404 not found
 app.use(notFound404);
+
+// middleware for errors
+app.use(errorHandler);
 
 // start server
 app.listen(process.env.PORT || 3000, () =>
