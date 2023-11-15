@@ -13,6 +13,10 @@ const postsRouter = require('./routers/posts');
 //import standard routes
 const homeController = require('./controllers/home');
 
+// import middleware
+const notFound404 = require('./middleware/notFound404');
+
+
 // use router
 app.use('/posts', postsRouter);
 
@@ -24,6 +28,8 @@ app.use(express.static('public'));
 app.get('/', homeController.index);
 
 
+// middleware for 404 not found
+app.use(notFound404);
 
 // start server
 app.listen(process.env.PORT || 3000, () =>
