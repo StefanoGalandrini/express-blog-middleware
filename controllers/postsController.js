@@ -117,7 +117,7 @@ function store(req, res)
 		...req.body,
 		slug: kebabCase(req.body.title),
 		updatedAt: new Date().toISOString(),
-		image: req.file.filename
+		image: req.file ? req.file : null,
 	});
 
 	// store new data in db.json
