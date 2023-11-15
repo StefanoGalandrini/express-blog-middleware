@@ -9,6 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // import posts routes
 const postsRouter = require('./routers/posts');
+const authRouter = require('./routers/auth');
 
 //import standard routes
 const homeController = require('./controllers/home');
@@ -16,11 +17,14 @@ const homeController = require('./controllers/home');
 // import middleware
 const notFound404 = require('./middleware/notFound404');
 const errorHandler = require('./middleware/errorHandler');
+const routesLogger = require('./middleware/routesLogger');
 
 
-// use router
+// use router for posts
 app.use('/posts', postsRouter);
 
+// use router for login
+app.use('/', authRouter);
 
 // static files
 app.use(express.static('public'));
@@ -34,6 +38,9 @@ app.use(notFound404);
 
 // middleware for errors
 app.use(errorHandler);
+
+// middleware for logging routes
+app.use(routesLogger);
 
 // start server
 app.listen(process.env.PORT || 3000, () =>

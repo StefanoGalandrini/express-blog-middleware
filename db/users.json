@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"username": "stefano.galandrini",
+		"password": "password",
+		"email": "stefano@email.it"
+	},
+	{
+		"id": 2,
+		"username": "admin.admin",
+		"password": "password",
+		"email": "admin@email.it"
+	},
+	{
+		"id": 3,
+		"username": "giacomo.leopardi",
+		"password": "password",
+		"email": "giacomo@email.it"
+	},
+	{
+		"id": 4,
+		"username": "zero.calcare",
+		"password": "password",
+		"email": "zero@email.it"
+	}
+]
